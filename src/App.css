@@ -1,38 +1,202 @@
+:root {
+  --clr-primary: #0f0f1c;
+  --clr-secondary: #1fa8ed;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 .App {
+  width: 100%;
+  height: 100%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: var(--clr-primary);
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.nav {
+  z-index: 2;
+
+  font-size: 19px;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+  align-items: baseline;
+  /* background: darkgray; */
+}
+.name {
+  font-size: 20px;
+  /* background: linear-gradient(
+    to right,
+    rgb(143, 68, 174),
+    rgb(103, 58, 183),
+    rgb(247, 128, 168),
+    rgb(186, 103, 221)
+  ); */
+  background: linear-gradient(to right, gray, white, black, gray);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: background-pan 3s linear infinite;
+}
+button {
+  outline: none;
+  border: none;
+  background: none;
   color: white;
+  padding: 10px;
+  font-size: 19px;
+  border-radius: 5px;
+  transition: 0.5s ease-out;
+  margin-right: 20px;
+  cursor: pointer;
+}
+button:hover {
+  background: rgb(124, 124, 124);
 }
 
-.App-link {
-  color: #61dafb;
+.hero {
+  height: 100vh;
 }
-
-@keyframes App-logo-spin {
+.menu-items {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  /* font-size: 35px; */
+  cursor: default;
+  z-index: 2;
+  /* position: relative; */
+}
+.menu-item {
+  color: white;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: "Ibarra Real Nova", serif;
+  margin-top: clamp(0.5rem, 1.2rem, 2rem);
+  transition: 0.7s ease;
+  z-index: 2;
+  margin-left: 5rem;
+}
+@keyframes background-pan {
   from {
-    transform: rotate(0deg);
+    background-position: 0% center;
   }
   to {
-    transform: rotate(360deg);
+    background-position: -200% center;
   }
+}
+.magic:hover {
+  background: linear-gradient(
+    to right,
+    rgb(123, 31, 162),
+    rgb(103, 58, 183),
+    rgb(244, 143, 177),
+    rgb(123, 31, 162)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: background-pan 3s linear infinite;
+}
+
+.menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+.menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+.background-pattern {
+  z-index: 1;
+  position: absolute;
+  left: -20px;
+  top: 0;
+  height: fill;
+  width: 100vw;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 9%,
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  transition: 800ms ease;
+}
+.menu-item:hover ~ .background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.8;
+}
+
+.dividor {
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-secondary);
+  position: absolute;
+  bottom: 0;
+}
+
+.projects-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project-container {
+  transition: 0.7s ease;
+  border: 3px solid var(--clr-primary);
+  border-radius: 12px;
+  margin-top: 2rem;
+  align-self: center;
+  font-family: "Ibarra Real Nova", serif;
+  width: 600px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.title {
+  font-size: 25px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: silver;
+  transition: 0.7s ease;
+}
+img {
+  margin-top: 2px;
+  border-radius: 8px;
+  height: fill;
+  height: 300px;
+  background-size: cover;
+}
+.description {
+  font-size: 20px;
+  text-align: center;
+  padding-left: 1rem;
+  transition: 0.7s ease;
+  color: rgb(153, 151, 151);
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 1.5rem;
+  padding-right: 1rem;
+}
+svg {
+  fill: white;
+}
+
+.project-container:hover .title {
+  color: var(--clr-secondary);
+}
+.project-container:hover .description {
+  color: silver;
+}
+.project-container:hover {
+  border: 1px solid var(--clr-secondary);
 }
