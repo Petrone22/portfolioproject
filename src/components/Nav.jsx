@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Nav = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(true);
   const [navClass, setNavClass] = useState("burgerBar");
   const changeClass = () => {
     if (!navOpen) {

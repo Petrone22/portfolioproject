@@ -235,6 +235,7 @@ svg {
   .nav-links {
     position: absolute;
     opacity: 1;
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     right: 0;
