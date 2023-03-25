@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-
 const Nav = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(true);
   const [navClass, setNavClass] = useState("burgerBar");
   const windowWidth = useRef(window.innerWidth);
   const changeClass = () => {
@@ -38,9 +37,18 @@ const Nav = () => {
           pointerEvents: navOpen ? "auto" : "none",
         }}
       >
-        <button className="nav-btn nav-button">Work</button>
+        <button className="nav-btn nav-button">
+          <a id="navlink" href="/">
+            Home
+          </a>{" "}
+        </button>
+        <button className="nav-btn nav-button">Work </button>
         <button className="nav-btn nav-button">About</button>
-        <button className="nav-btn nav-button">Resume</button>
+        <button className="nav-btn nav-button">
+          <a id="navlink" href="/resume">
+            Resume
+          </a>
+        </button>
         <button className="nav-btn nav-button">Contact</button>
       </div>
       <div
