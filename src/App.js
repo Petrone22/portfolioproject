@@ -15,11 +15,11 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Router>
+      <Router hashType="hashbang">
         <Routes>
           <Route path="/portfolioproject" element={<Home />} />
           <Route path="/" element={<Home />} />
-          <Route path="/portfolioproject/resume" element={<Resume />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </Router>
     </div>

@@ -45,7 +45,7 @@ const Nav = () => {
         <button className="nav-btn nav-button">Work </button>
         <button className="nav-btn nav-button">About</button>
         <button className="nav-btn nav-button">
-          <a id="navlink" href="/resume">
+          <a id="navlink" href="/#/resume">
             Resume
           </a>
         </button>
