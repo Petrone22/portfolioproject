@@ -16,7 +16,9 @@ const Nav = () => {
       <div
         className="nav-links"
         style={{
-          display: navOpen ? "flex" : "none",
+          // display: navOpen ? "flex" : "none",
+          opacity: navOpen ? "1" : "0",
+          pointerEvents: navOpen ? "auto" : "none",
         }}
       >
         <button className="nav-btn">Work</button>
