@@ -18,7 +18,11 @@ const Resume = () => {
           <div className="resume-links">
             <button className="resume-btn nav-button">
               {" "}
-              <a href="" className="resume-link">
+              <a
+                href="https://github.com/Petrone22"
+                target={"_blank"}
+                className="resume-link"
+              >
                 Github
               </a>{" "}
             </button>
@@ -28,12 +32,20 @@ const Resume = () => {
               </a>{" "}
             </button>
             <button className="resume-btn nav-button">
-              <a href="" className="resume-link">
+              <a
+                href="https://instagram.com/petrone0001/"
+                target={"_blank"}
+                className="resume-link"
+              >
                 Instagram
               </a>{" "}
             </button>
             <button className="resume-btn nav-button">
-              <a href="" className="resume-link">
+              <a
+                href="https://facebook.com/OneLittleGod/"
+                target={"_blank"}
+                className="resume-link"
+              >
                 Facebook
               </a>{" "}
             </button>
@@ -95,15 +107,15 @@ const Resume = () => {
             <div className="skill">
               {" "}
               <h3>Team Management</h3>
-              <li>Core communication skills.</li>
+              <li>Core communication skills</li>
               <li>Digging for root causes for issues</li>
-              <li>Team work.</li>
+              <li>Team work</li>
               <li>Finding Vision in projects</li>
             </div>
             <div className="skill">
               {" "}
               <h3>Customer Service</h3>
-              <li>Core Communication skills.</li>
+              <li>Core Communication skills</li>
               <li>Experience personalization</li>
               <li>Determination</li>
               <li>Learning and growth</li>

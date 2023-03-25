@@ -8,7 +8,7 @@ import Nav from "./components/Nav";
 // import enigma from "./assets/images/enigma.png";
 // import portfolio from "./assets/images/portfolio.png";
 import Resume from "./pages/Resume";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <Nav />
       <Router>
         <Routes>
+          <Route path="/portfolioproject" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>

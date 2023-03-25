@@ -38,7 +38,7 @@ const Nav = () => {
         }}
       >
         <button className="nav-btn nav-button">
-          <a id="navlink" href="/">
+          <a id="navlink" href="/portfolioproject">
             Home
           </a>{" "}
         </button>
