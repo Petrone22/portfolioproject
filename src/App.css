@@ -116,7 +116,7 @@ button:hover {
   left: -20px;
   top: 0;
   height: stretch;
-  width: 100vw;
+  width: 100%;
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.1) 9%,
     transparent 9%
@@ -220,10 +220,15 @@ svg {
     margin-top: 5px;
     margin-right: 5px;
   }
+
   .background-pattern {
     z-index: 0;
+    width: 100%;
   }
-
+  .menu-item {
+    align-self: flex-start;
+    text-align: start;
+  }
   .menu-item {
     z-index: 1;
   }
@@ -237,7 +242,7 @@ svg {
     height: 100%;
     padding-top: 8rem;
     gap: 3rem;
-    width: 40%;
+    width: 70%;
     backdrop-filter: blur(166px);
     background: rgba(15, 15, 28, 0.2);
 
@@ -282,13 +287,17 @@ svg {
     text-align: start;
     margin-left: 5px;
     width: fit-content;
+    font-size: 20px;
   }
   .description {
-    font-size: 20px;
+    font-size: 17px;
     text-align: start;
   }
   img {
-    width: 200px;
+    width: 42vw;
     height: auto;
+  }
+  svg {
+    height: 20px;
   }
 }
