@@ -115,7 +115,7 @@ button:hover {
   position: absolute;
   left: -20px;
   top: 0;
-  height: fill;
+  height: stretch;
   width: 100vw;
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.1) 9%,
@@ -169,7 +169,7 @@ button:hover {
 img {
   margin-top: 2px;
   border-radius: 8px;
-  height: fill;
+  height: stretch;
   height: 300px;
   background-size: cover;
 }
@@ -199,4 +199,96 @@ svg {
 }
 .project-container:hover {
   border: 1px solid var(--clr-secondary);
+}
+.hamburger {
+  display: none;
+  width: 30px;
+  height: 100%px;
+}
+#burgerBar {
+  width: 100%;
+  height: 5px;
+  margin-top: 5px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+@media only screen and (max-width: 780px) {
+  .hamburger {
+    display: block;
+    z-index: 3;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  .background-pattern {
+    z-index: 0;
+  }
+
+  .menu-item {
+    z-index: 1;
+  }
+  .nav-links {
+    position: absolute;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding-top: 8rem;
+    gap: 3rem;
+    width: 40%;
+    backdrop-filter: blur(166px);
+    background: rgba(15, 15, 28, 0.2);
+
+    z-index: 3;
+  }
+  .openedBurger:nth-child(1) {
+    transform: translate(0, 10px) rotate(-45deg);
+  }
+  .openedBurger:nth-child(3) {
+    transform: translate(0, 0px) rotate(45deg);
+  }
+  .openedBurger:nth-child(2) {
+    display: none;
+  }
+  .magic {
+    background: linear-gradient(
+      to right,
+      rgb(123, 31, 162),
+      rgb(103, 58, 183),
+      rgb(244, 143, 177),
+      rgb(123, 31, 162)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: background-pan 3s linear infinite;
+  }
+  button {
+    font-size: 25px;
+  }
+  .menu-items {
+    height: 100%;
+    gap: 4rem;
+    justify-content: flex-start;
+    margin-top: 3rem;
+  }
+  .project-container {
+    flex-direction: row;
+    margin-bottom: 5px;
+  }
+  .title {
+    text-align: start;
+    margin-left: 5px;
+    width: fit-content;
+  }
+  .description {
+    font-size: 20px;
+    text-align: start;
+  }
+  img {
+    width: 200px;
+    height: auto;
+  }
 }
