@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const Hero = () => {
   const [itemIndex, setItemIndex] = useState(0);
-  console.log(itemIndex);
   const changeBG = () => {
     if (itemIndex === 0) {
       return {

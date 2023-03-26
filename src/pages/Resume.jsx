@@ -27,7 +27,10 @@ const Resume = () => {
               </a>{" "}
             </button>
             <button className="resume-btn nav-button">
-              <a href="" className="resume-link">
+              <a
+                href="https://linkedin.com/in/mustafa-rashid-7370a7265/"
+                className="resume-link"
+              >
                 LinkedIN
               </a>{" "}
             </button>

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-const Nav = () => {
+import { BrowserRouter as Router, Link } from "react-router-dom";
+const Nav = ({ scrollToBottom }) => {
   const [navOpen, setNavOpen] = useState(true);
   const [navClass, setNavClass] = useState("burgerBar");
   const windowWidth = useRef(window.innerWidth);
@@ -38,18 +39,32 @@ const Nav = () => {
         }}
       >
         <button className="nav-btn nav-button">
-          <a id="navlink" href="/portfolioproject">
+          <Link to="/" className="nav-link">
             Home
-          </a>{" "}
+          </Link>
         </button>
-        <button className="nav-btn nav-button">Work </button>
-        <button className="nav-btn nav-button">About</button>
         <button className="nav-btn nav-button">
-          <a id="navlink" href="/#/resume">
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+        </button>
+        <button className="nav-btn nav-button">
+          <Link to="/resume" className="nav-link">
             Resume
+          </Link>
+        </button>
+        <button className="nav-btn nav-button">
+          <a
+            href="#"
+            className="nav-link"
+            onClick={() => {
+              scrollToBottom();
+            }}
+          >
+            Contact
           </a>
         </button>
-        <button className="nav-btn nav-button">Contact</button>
+        <button className="nav-btn nav-button"></button>
       </div>
       <div
         className="hamburger"

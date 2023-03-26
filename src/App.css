@@ -28,6 +28,10 @@
   align-items: baseline;
   /* background: darkgray; */
 }
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
 .name {
   font-size: 20px;
   /* background: linear-gradient(
@@ -233,6 +237,7 @@ svg {
   .menu-item {
     z-index: 1;
   }
+
   .nav-links {
     position: absolute;
     opacity: 1;
@@ -412,4 +417,65 @@ h3 {
 
 li {
   margin-bottom: 5px;
+}
+.about-page {
+  height: calc(100vh - 4rem);
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: fit-content;
+}
+.about-container {
+  border: 1px solid var(--clr-secondary);
+  border-radius: 12px;
+  max-width: 60%;
+  width: fit-content;
+  height: fit-content;
+  min-height: fit-content;
+  padding: 2rem;
+}
+.me {
+  font-size: 50px;
+  background: linear-gradient(
+    to right,
+    gray,
+    rgb(191, 191, 191),
+    rgb(43, 43, 43),
+    gray
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: background-pan 3s linear infinite;
+  margin-bottom: 3rem;
+}
+.intro-abt-me {
+  font-size: 20px;
+  word-spacing: 1px;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+.contact-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+  /* border-radius: 10px; */
+  transition: 1s ease;
+  width: 25%;
+  border-bottom: 1px solid var(--clr-secondary);
+}
+.email-span {
+  font-size: 19px;
+}
+.contact-info > span > a {
+  margin-right: 9px;
 }
