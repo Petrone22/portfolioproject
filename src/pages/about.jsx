@@ -14,9 +14,11 @@ const About = () => {
           within my projects. <br />
           But I decided to focus more on my unrelenting passion for technology
           and creative thinking. I vowed to deliver impeccable, world class
-          experiences through my skills. My professional coding journey has just
-          started, <br />
-          Join me on this adventure!
+          experiences through my skills. I have learned core and vital web
+          development skills, including HTML5, CSS3, JavaScript, ReactJS and
+          TailWindCoss. <br />I love working with high level communication and
+          teams between which work flows seamlessly. <br /> My professional
+          coding journey has just started, Join me on this adventure!
         </p>
       </div>
     </div>
