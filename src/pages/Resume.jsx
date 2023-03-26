@@ -114,6 +114,7 @@ const Resume = () => {
               <h3>Software Engineering</h3>
               <li>HTML5</li>
               <li>CSS3</li>
+              <li>ReactJS</li>
               <li>JavaScript</li>
               <li>Python</li>
             </div>
