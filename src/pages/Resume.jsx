@@ -19,6 +19,12 @@ const Resume = () => {
             <span>email: </span>
             the1rashid@gmail.com
           </div>
+          <div className="email-span">
+            <span>Website: </span>
+            <a href="https://petrone22.github.io/portfolioproject/#/">
+              Rashid.com
+            </a>{" "}
+          </div>
           <div className="resume-links">
             <button className="resume-btn nav-button">
               {" "}
