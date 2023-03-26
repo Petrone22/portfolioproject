@@ -15,6 +15,10 @@ const Resume = () => {
             I vowed to deliver impeccable user experience to all my clients,
             using industry standards such as ReactJS, Tailwind CSS and more.
           </p>
+          <div className="email-span">
+            <span>email: </span>
+            the1rashid@gmail.com
+          </div>
           <div className="resume-links">
             <button className="resume-btn nav-button">
               {" "}
