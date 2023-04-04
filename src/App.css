@@ -255,6 +255,7 @@ svg {
 
     z-index: 3;
   }
+
   .openedBurger:nth-child(1) {
     transform: translate(0, 10px) rotate(-45deg);
   }
@@ -286,18 +287,25 @@ svg {
     justify-content: flex-start;
     margin-top: 3rem;
   }
+  .menu-item {
+    text-align: start;
+    margin-left: 5px;
+  }
   .project-container {
-    flex-direction: row;
-    margin-bottom: 5px;
+    padding: 10px;
+    margin: 0 5px 0 5px;
+  }
+  img {
+    display: none;
   }
   .title {
     text-align: start;
-    margin-left: 5px;
     width: fit-content;
     font-size: 20px;
   }
   .description {
     font-size: 17px;
+    padding: 0;
     text-align: start;
   }
   img {
@@ -471,10 +479,11 @@ li {
   gap: 4px;
   /* border-radius: 10px; */
   transition: 1s ease;
-  width: 25%;
+  width: 100%;
   border-bottom: 1px solid var(--clr-secondary);
 }
 .email-span {
+  width: fill;
   font-size: 19px;
 }
 .contact-info > span > a {
@@ -484,4 +493,13 @@ li {
   font-size: 17px;
   margin-top: 1rem;
   margin-left: 10px;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  border-left: 1px solid var(--clr-primary);
+  background: var(--clr-primary);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-secondary);
+  border-radius: 5px;
 }

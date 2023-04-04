@@ -18,32 +18,17 @@ const Nav = ({ scrollToBottom }) => {
 
   const setNav = () => {
     if (windowWidth.current >= 780) {
-      window.removeEventListener("resize", setNav);
       setNavOpen((prevNav) => true);
       console.log("foo");
-      return {
-        opacity: "100%",
-        pointerEvents: "auto",
-      };
     } else if (windowWidth.current < 780) {
       if (navClass === "burgerBar") {
-        window.removeEventListener("resize", setNav);
         setNavOpen((prevNav) => false);
-        return {
-          opacity: "0%",
-          pointerEvents: "none",
-        };
       } else if (navClass === "openedBurger") {
-        window.removeEventListener("resize", setNav);
         setNavOpen((preVnav) => true);
-        return {
-          opacity: "100%",
-          pointerEvents: "auto",
-        };
       }
     }
   };
-  setNav();
+
   return (
     <div className="nav">
       <span className="name ">Mustafa.</span>
@@ -51,43 +36,40 @@ const Nav = ({ scrollToBottom }) => {
         className="nav-links nav-btns"
         style={{
           // display: navOpen ? "flex" : "none",
-          opacity: "1",
-          pointerEvents: "auto",
+          opacity: navOpen ? "1" : "0",
+          pointerEvents: navOpen ? "auto" : "none",
         }}
       >
-        <button className="nav-btn nav-button">
-          <Link
-            to="/"
-            className="nav-link"
-            onClick={() => {
-              setNavOpen((PrevNav) => !PrevNav);
-              setNavClass([(revClass) => "burgerBar"]);
-            }}
-          >
+        <button
+          className="nav-btn nav-button"
+          onClick={() => {
+            setNavOpen((PrevNav) => !PrevNav);
+            setNavClass((prevNavClass) => "burgerBar");
+          }}
+        >
+          <Link to="/" className="nav-link">
             Home
           </Link>
         </button>
-        <button className="nav-btn nav-button">
-          <Link
-            to="/about"
-            className="nav-link"
-            onClick={() => {
-              setNavOpen((PrevNav) => !PrevNav);
-              setNavClass([(revClass) => "burgerBar"]);
-            }}
-          >
+        <button
+          className="nav-btn nav-button"
+          onClick={() => {
+            setNavOpen((PrevNav) => !PrevNav);
+            setNavClass((prevNavClass) => "burgerBar");
+          }}
+        >
+          <Link to="/about" className="nav-link">
             About
           </Link>
         </button>
-        <button className="nav-btn nav-button">
-          <Link
-            to="/resume"
-            className="nav-link"
-            onClick={() => {
-              setNavOpen((PrevNav) => !PrevNav);
-              setNavClass([(revClass) => "burgerBar"]);
-            }}
-          >
+        <button
+          className="nav-btn nav-button"
+          onClick={() => {
+            setNavOpen((PrevNav) => !PrevNav);
+            setNavClass((prevNavClass) => "burgerBar");
+          }}
+        >
+          <Link to="/resume" className="nav-link">
             Resume
           </Link>
         </button>
@@ -95,7 +77,7 @@ const Nav = ({ scrollToBottom }) => {
           className="nav-btn nav-button"
           onClick={() => {
             setNavOpen((PrevNav) => !PrevNav);
-            setNavClass([(revClass) => "burgerBar"]);
+            setNavClass((prevNavClass) => "burgerBar");
           }}
         >
           <a
@@ -103,12 +85,12 @@ const Nav = ({ scrollToBottom }) => {
             className="nav-link"
             onClick={() => {
               scrollToBottom();
+              setNavClass((prevNavClass) => "burgerBar");
             }}
           >
             Contact
           </a>
         </button>
-        <button className="nav-btn nav-button"></button>
       </div>
       <div
         className="hamburger"
