@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { useRef } from "react";
 import "./App.css";
 import Nav from "./components/Nav";
 import Resume from "./pages/Resume";
@@ -7,16 +8,21 @@ import About from "./pages/about.jsx";
 import Contact from "./components/contact";
 
 function App() {
-  const scrollToBottom = () => {
+  const home = useRef(null);
+  const projects = useRef(null);
+  const contact = useRef(null);
+
+  const handleScroll = (ref) => {
     window.scrollTo({
-      top: document.body.scrollHeight,
+      top: ref.offsetTop,
+      left: 0,
       behavior: "smooth",
     });
   };
   return (
     <div className="App">
       <Router>
-        <Nav scrollToBottom={scrollToBottom} />
+        <Nav handleScroll={handleScroll} />
         <Routes>
           {/* <Route path="/portfolioproject" element={<Home />} /> */}
           <Route path="/" element={<Home />} />
