@@ -1,5 +1,5 @@
 import React from "react";
-const Project = ({ title, img, description, linkgh, linkPages }) => {
+const Project = ({ title, img, description, linkgh, linkPages, refName2 }) => {
   return (
     <div className="project-container">
       {/* <div className="img" style={{ backgroundImage: `url(${form})` }}></div> */}

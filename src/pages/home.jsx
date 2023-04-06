@@ -1,18 +1,20 @@
 import React from "react";
-import Nav from "../components/Nav";
 import Hero from "../components/Hero";
 import data from "../projects.json";
 import form from "../assets/images/form.png";
 import space from "../assets/images/space.png";
 import enigma from "../assets/images/enigma.png";
 import portfolio from "../assets/images/portfolio.png";
-import Resume from "./Resume";
 import Project from "../components/Project";
-const Home = () => {
+import AboutMe from "../components/AboutMe";
+const Home = ({ refName, refName2 }) => {
   return (
     <div className="Home">
       <Hero></Hero>
-      <div className="projects-section">
+      <div className="about">
+        <AboutMe refName={refName} />
+      </div>
+      <div className="projects-section" ref={refName2}>
         <Project
           title={data[1].title}
           description={data[1].description}

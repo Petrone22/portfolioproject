@@ -1,18 +1,27 @@
-//WHAT WE'RE DOING RIGHT NOW IS WE ARE TRYING TO SET UP THE NAV SO IT AUTO CLOSES AUTOMATICALLY WHEN CLICKED
 import React, { useRef, useState, useEffect } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-const Nav = ({ scrollToBottom }) => {
+import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
+const Nav = ({ handleScroll, refName, refName2 }) => {
   const [navOpen, setNavOpen] = useState(true);
-  const [navClass, setNavClass] = useState("burgerBar");
+  const [navClass, setNavClass] = useState("openedBurger");
   const windowWidth = useRef(window.innerWidth);
+  let location = useLocation();
+
+  // console.log(location.pathname);
 
   const changeClass = () => {
-    if (!navOpen) {
-      setNavClass((prevClass) => "openedBurger");
-    } else if (navOpen) {
+    if (navOpen) {
       setNavClass((prevClass) => "burgerBar");
+      setNavOpen((prevNav) => !prevNav);
+      // setNavClass((prevClass) => "openedBurger");
+      // setNavOpen((prevNav) => !prevNav);
+    } else if (!navOpen) {
+      // setNavClass((prevClass) => "burgerBar");
+      // setNavOpen((prevNav) => !prevNav);
+      setNavOpen((prevNav) => !prevNav);
+      setNavClass((prevClass) => "openedBurger");
     }
   };
+
   useEffect(() => {
     window.addEventListener("resize", setNav);
   }, []);
@@ -20,7 +29,6 @@ const Nav = ({ scrollToBottom }) => {
   const setNav = () => {
     if (windowWidth.current >= 780) {
       setNavOpen((prevNav) => true);
-      console.log("foo");
     } else if (windowWidth.current < 780) {
       if (navClass === "burgerBar") {
         setNavOpen((prevNav) => false);
@@ -47,9 +55,6 @@ const Nav = ({ scrollToBottom }) => {
             if (windowWidth.current < 700) {
               setNavOpen((PrevNav) => !PrevNav);
               setNavClass((prevNavClass) => "burgerBar");
-              console.log("foo");
-            } else {
-              return;
             }
           }}
         >
@@ -59,18 +64,37 @@ const Nav = ({ scrollToBottom }) => {
         </button>
         <button
           className="nav-btn nav-button"
+          style={{ display: location.pathname === "/" ? "inline" : "none" }}
+          onClick={() => {
+            if (windowWidth.current < 700) {
+              setNavOpen((PrevNav) => !PrevNav);
+              setNavClass((prevNavClass) => "burgerBar");
+              handleScroll(refName);
+            } else {
+              handleScroll(refName);
+            }
+          }}
+        >
+          <Link to="/" className="nav-link">
+            About
+          </Link>
+        </button>
+
+        <button
+          className="nav-btn nav-button"
+          style={{ display: location.pathname === "/" ? "inline" : "none" }}
           onClick={() => {
             if (windowWidth.current < 700) {
               setNavOpen((PrevNav) => !PrevNav);
               setNavClass((prevNavClass) => "burgerBar");
             } else {
-              return;
+              handleScroll(refName2);
             }
           }}
         >
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
+          <a href="#" className="nav-link">
+            Projects
+          </a>
         </button>
         <button
           className="nav-btn nav-button"
@@ -78,8 +102,6 @@ const Nav = ({ scrollToBottom }) => {
             if (windowWidth.current < 700) {
               setNavOpen((PrevNav) => !PrevNav);
               setNavClass((prevNavClass) => "burgerBar");
-            } else {
-              return;
             }
           }}
         >
@@ -93,36 +115,20 @@ const Nav = ({ scrollToBottom }) => {
             if (windowWidth.current < 700) {
               setNavOpen((PrevNav) => !PrevNav);
               setNavClass((prevNavClass) => "burgerBar");
-            } else {
-              return;
             }
           }}
         >
-          <a
-            href="#"
-            className="nav-link"
-            onClick={() => {
-              if (windowWidth.current < 700) {
-                setNavOpen((PrevNav) => !PrevNav);
-                setNavClass((prevNavClass) => "burgerBar");
-              } else {
-                return;
-              }
-            }}
-          >
+          <Link to="/contact" href="#" className="nav-link">
             Contact
-          </a>
+          </Link>
         </button>
       </div>
       <div
         className="hamburger"
         onClick={() => {
-          if (windowWidth.current < 700) {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
-          } else {
-            return;
-          }
+          changeClass();
+          // setNavOpen((PrevNav) => !PrevNav);
+          // setNavClass((prevNavClass) => "burgerBar");
         }}
       >
         <div className={navClass} id="burgerBar"></div>
