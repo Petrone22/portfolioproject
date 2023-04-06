@@ -152,6 +152,7 @@ button:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .project-container {
