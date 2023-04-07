@@ -103,8 +103,6 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
               setNavOpen((PrevNav) => !PrevNav);
               setNavClass((prevNavClass) => "burgerBar");
               handleScroll(refName2);
-            } else {
-              handleScroll(refName2);
             }
           }}
         >
