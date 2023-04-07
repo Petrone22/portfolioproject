@@ -18,9 +18,11 @@
 }
 
 .nav {
-  z-index: 2;
-
+  z-index: 20;
+  position: fixed;
+  width: 100%;
   font-size: 19px;
+  backdrop-filter: blur(5px);
   height: 4rem;
   display: flex;
   justify-content: space-between;
@@ -79,6 +81,11 @@ button:hover {
   cursor: default;
   z-index: 2;
   /* position: relative; */
+  padding-top: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .menu-item {
   color: white;
@@ -545,35 +552,37 @@ textarea {
     margin-top: 5px;
     margin-right: 5px;
   }
-
+  #burgerBar {
+    background: var(--clr-secondary);
+  }
   .background-pattern {
     z-index: 0;
     width: 100%;
   }
-  .menu-item {
-    align-self: flex-start;
-    text-align: start;
-  }
+
   .menu-item {
     z-index: 1;
   }
-
+  .nav-btn {
+    background: #1d6f98;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
   .nav-links {
     position: absolute;
     opacity: 1;
-    pointer-events: none;
     display: flex;
     flex-direction: column;
     right: 0;
-    top: 0;
-    height: 100%;
-    padding-top: 8rem;
-    gap: 3rem;
-    width: 70%;
-    backdrop-filter: blur(166px);
-    background: rgba(15, 15, 28, 0.2);
+
+    top: -50%;
+    height: fit-content;
+    gap: 1rem;
+    /* backdrop-filter: blur(166px); */
+    /* background: rgba(15, 15, 28, 0.2); */
 
     z-index: 3;
+    transition: 0.3s ease-in-out;
   }
 
   .openedBurger:nth-child(1) {

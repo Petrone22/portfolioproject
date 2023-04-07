@@ -45,8 +45,8 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
         className="nav-links nav-btns"
         style={{
           // display: navOpen ? "flex" : "none",
+          top: navOpen ? "5rem" : "-50%",
           opacity: navOpen ? "1" : "0",
-          pointerEvents: navOpen ? "auto" : "none",
         }}
       >
         <button
@@ -80,7 +80,7 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
           </Link>
         </button>
 
-        <button
+        {/* <button
           className="nav-btn nav-button"
           style={{ display: location.pathname === "/" ? "inline" : "none" }}
           onClick={() => {
@@ -95,7 +95,7 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
           <a href="#" className="nav-link">
             Projects
           </a>
-        </button>
+        </button> */}
         <button
           className="nav-btn nav-button"
           onClick={() => {
