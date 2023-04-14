@@ -16,7 +16,14 @@
   display: flex;
   flex-direction: column;
 }
-
+.mobile-nav {
+  position: absolute;
+  right: 0;
+  gap: 12px;
+  display: none;
+  flex-direction: column;
+  top: 3rem;
+}
 .nav {
   z-index: 20;
   position: fixed;
@@ -555,6 +562,9 @@ textarea {
     margin-top: 5px;
     margin-right: 5px;
   }
+  .mobile-nav {
+    display: flex;
+  }
   #burgerBar {
     background: var(--clr-secondary);
   }
@@ -574,7 +584,7 @@ textarea {
   .nav-links {
     position: absolute;
     opacity: 1;
-    display: flex;
+    display: none;
     flex-direction: column;
     right: 0;
 
