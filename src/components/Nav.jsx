@@ -67,12 +67,10 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
             handleScroll(refName2);
           }}
         >
-          {/* <a href="javascript:void(0)" className="nav-link">
-            Work
-          </a> */}
-          Work
+          <a href="#" className="nav-link">
+            Projects
+          </a>
         </button>
-
         <button
           className="nav-btn nav-button"
           onClick={() => {
@@ -112,75 +110,6 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
         <div className={navClass} id="burgerBar"></div>
         <div className={navClass} id="burgerBar"></div>
         <div className={navClass} id="burgerBar"></div>
-      </div>
-      <div
-        className="mobile-nav"
-        style={{
-          // display: navOpen ? "flex" : "none",
-          top: navOpen ? "5rem" : "-50%",
-          opacity: navOpen ? "1" : "0",
-        }}
-      >
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
-          }}
-        >
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </button>
-        <button
-          className="nav-btn nav-button"
-          style={{ display: location.pathname === "/" ? "inline" : "none" }}
-          onClick={() => {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
-            handleScroll(refName);
-          }}
-        >
-          <Link to="/" className="nav-link">
-            About
-          </Link>
-        </button>
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
-            handleScroll(refName2);
-          }}
-        >
-          {/* <a href="javascript:void(0)" className="nav-link">
-            Work
-          </a> */}
-        </button>
-
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
-            handleScroll(refName2);
-          }}
-        >
-          <Link to="/resume" className="nav-link">
-            Resume
-          </Link>
-        </button>
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
-          }}
-        >
-          <Link to="/contact" href="#" className="nav-link">
-            Contact
-          </Link>
-        </button>
       </div>
     </div>
   );
