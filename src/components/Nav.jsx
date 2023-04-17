@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Nav = ({ handleScroll, refName, refName2 }) => {
   const [navOpen, setNavOpen] = useState(false);
   const [navClass, setNavClass] = useState("burgerBar");
@@ -24,7 +24,7 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
 
   useEffect(() => {
     window.addEventListener("resize", setNav);
-  }, []);
+  });
 
   const setNav = () => {
     if (windowWidth.current >= 780) {
@@ -67,7 +67,10 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
             handleScroll(refName2);
           }}
         >
-          <a className="nav-link">Work</a>
+          {/* <a href="javascript:void(0)" className="nav-link">
+            Work
+          </a> */}
+          Work
         </button>
 
         <button
@@ -150,7 +153,9 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
             handleScroll(refName2);
           }}
         >
-          <a className="nav-link">Work</a>
+          {/* <a href="javascript:void(0)" className="nav-link">
+            Work
+          </a> */}
         </button>
 
         <button

@@ -6,7 +6,6 @@ import git from "../assets/SVGs/git.png";
 import figma from "../assets/SVGs/figma.png";
 import react from "../assets/SVGs/react.png";
 import python from "../assets/SVGs/python.png";
-import { useRef } from "react";
 const AboutMe = ({ refName }) => {
   return (
     <div className="aboutMe" ref={refName}>

@@ -31,6 +31,7 @@ const Resume = () => {
               <a
                 href="https://github.com/Petrone22"
                 target={"_blank"}
+                rel="noreferrer"
                 className="resume-link"
               >
                 Github
@@ -48,6 +49,7 @@ const Resume = () => {
               <a
                 href="https://instagram.com/petrone0001/"
                 target={"_blank"}
+                rel="noreferrer"
                 className="resume-link"
               >
                 Instagram
@@ -57,6 +59,7 @@ const Resume = () => {
               <a
                 href="https://facebook.com/OneLittleGod/"
                 target={"_blank"}
+                rel="noreferrer"
                 className="resume-link"
               >
                 Facebook
