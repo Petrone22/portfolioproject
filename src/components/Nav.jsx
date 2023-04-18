@@ -22,21 +22,21 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", setNav);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("resize", setNav);
+  // });
 
-  const setNav = () => {
-    if (windowWidth.current >= 780) {
-      setNavOpen((prevNav) => true);
-    } else if (windowWidth.current < 780) {
-      if (navClass === "burgerBar") {
-        setNavOpen((prevNav) => false);
-      } else if (navClass === "openedBurger") {
-        setNavOpen((preVnav) => true);
-      }
-    }
-  };
+  // const setNav = () => {
+  //   if (windowWidth.current >= 780) {
+  //     setNavOpen((prevNav) => true);
+  //   } else if (windowWidth.current < 780) {
+  //     if (navClass === "burgerBar") {
+  //       setNavOpen((prevNav) => false);
+  //     } else if (navClass === "openedBurger") {
+  //       setNavOpen((preVnav) => true);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="nav">
@@ -54,16 +54,14 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
             handleScroll(refName);
           }}
         >
-          <Link to="/" className="nav-link">
+          <a href="#" className="nav-link">
             About
-          </Link>
+          </a>
         </button>
 
         <button
           className="nav-btn nav-button"
           onClick={() => {
-            setNavOpen((PrevNav) => !PrevNav);
-            setNavClass((prevNavClass) => "burgerBar");
             handleScroll(refName2);
           }}
         >
@@ -74,26 +72,14 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
         <button
           className="nav-btn nav-button"
           onClick={() => {
-            if (windowWidth.current < 700) {
-              setNavOpen((PrevNav) => !PrevNav);
-              setNavClass((prevNavClass) => "burgerBar");
-              handleScroll(refName2);
-            }
+            handleScroll(refName2);
           }}
         >
           <Link to="/resume" className="nav-link">
             Resume
           </Link>
         </button>
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            if (windowWidth.current < 700) {
-              setNavOpen((PrevNav) => !PrevNav);
-              setNavClass((prevNavClass) => "burgerBar");
-            }
-          }}
-        >
+        <button className="nav-btn nav-button">
           <Link to="/contact" href="#" className="nav-link">
             Contact
           </Link>
@@ -103,13 +89,60 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
         className="hamburger"
         onClick={() => {
           changeClass();
-          // setNavOpen((PrevNav) => !PrevNav);
-          // setNavClass((prevNavClass) => "burgerBar");
         }}
       >
         <div className={navClass} id="burgerBar"></div>
         <div className={navClass} id="burgerBar"></div>
         <div className={navClass} id="burgerBar"></div>
+      </div>
+      <div
+        className="mobile-nav"
+        style={{
+          right: navOpen ? "0" : "-8rem",
+        }}
+      >
+        <button className="nav-btn nav-button">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </button>
+        <button
+          className="nav-btn nav-button"
+          style={{ display: location.pathname === "/" ? "inline" : "none" }}
+          onClick={() => {
+            handleScroll(refName);
+          }}
+        >
+          <a href="#" className="nav-link">
+            About
+          </a>
+        </button>
+
+        <button
+          className="nav-btn nav-button"
+          onClick={() => {
+            handleScroll(refName2);
+          }}
+        >
+          <a href="#" className="nav-link">
+            Projects
+          </a>
+        </button>
+        <button
+          className="nav-btn nav-button"
+          onClick={() => {
+            handleScroll(refName2);
+          }}
+        >
+          <Link to="/resume" className="nav-link">
+            Resume
+          </Link>
+        </button>
+        <button className="nav-btn nav-button">
+          <Link to="/contact" href="#" className="nav-link">
+            Contact
+          </Link>
+        </button>
       </div>
     </div>
   );

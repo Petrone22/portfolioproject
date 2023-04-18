@@ -2,7 +2,9 @@
   --clr-primary: #0f0f1c;
   --clr-secondary: #1fa8ed;
 }
-
+body {
+  height: 100%;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -19,11 +21,12 @@
 }
 .mobile-nav {
   position: absolute;
-  right: 0;
+  right: -200%;
   gap: 12px;
   display: none;
   flex-direction: column;
-  top: 3rem;
+  top: 4rem;
+  transition: 0.75s ease;
 }
 .nav {
   z-index: 20;
@@ -492,7 +495,7 @@ li {
   display: flex;
   margin-top: 1rem;
 
-  height: calc(100vh - 1rem);
+  height: 100vh;
   justify-content: space-around;
   align-items: flex-start;
   width: 100%;
