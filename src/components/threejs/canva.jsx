@@ -1,12 +1,14 @@
 import { Vector3 } from "three";
 import { useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { SpotLight, useDepthBuffer, useHelper } from "@react-three/drei";
+import { SpotLight, useDepthBuffer } from "@react-three/drei";
 import sculpture from "./bigsculpture.obj";
 import { useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import * as THREE from "three";
 export default function Canva() {
+  const obj = useLoader(OBJLoader, sculpture);
+
   return (
     <Canvas
       shadows
@@ -17,17 +19,14 @@ export default function Canva() {
       <color attach="background" args={["#202020"]} />
       <fog attach="fog" args={["#202020", 5, 20]} />
       <ambientLight intensity={0.015} />
-      <Scene />
+      <Scene obj={obj.children[0].geometry} />
     </Canvas>
   );
 }
 
-function Scene() {
-  const obj = useLoader(OBJLoader, sculpture);
-
+function Scene({ obj }) {
   const depthBuffer = useDepthBuffer({ frames: 1 });
 
-  useHelper();
   return (
     <>
       <MovingSpot
@@ -45,13 +44,13 @@ function Scene() {
         position={[1, -1.03, 0]}
         castShadow
         receiveShadow
-        geometry={obj.children[0].geometry}
+        geometry={obj}
         material={new THREE.MeshPhongMaterial()}
         dispose={null}
       />
       <mesh receiveShadow position={[0, -1, 0]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[50, 50]} />
-        <meshPhongMaterial />
+        <meshPhongMaterial color={"#c8e1ee"} />
       </mesh>
     </>
   );
