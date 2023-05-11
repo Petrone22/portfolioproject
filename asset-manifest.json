@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolioproject/static/css/main.7a688c65.css",
-    "main.js": "/portfolioproject/static/js/main.0c8b0532.js",
-    "static/media/sculpture.obj": "/portfolioproject/static/media/sculpture.3f95152120f7ae03d28c.obj",
+    "main.js": "/portfolioproject/static/js/main.d38bcdea.js",
+    "static/media/bigsculpture.obj": "/portfolioproject/static/media/bigsculpture.3f95152120f7ae03d28c.obj",
     "static/media/musika.png": "/portfolioproject/static/media/musika.1d9b7a9254a539f3fd76.png",
     "static/media/space.png": "/portfolioproject/static/media/space.71024adf8900ab78d3f6.png",
     "static/media/python.png": "/portfolioproject/static/media/python.d8b377f05522bf35de36.png",
@@ -15,10 +15,10 @@
     "static/media/github.gif": "/portfolioproject/static/media/github.7d909b64afc22f8b5ad3.gif",
     "index.html": "/portfolioproject/index.html",
     "main.7a688c65.css.map": "/portfolioproject/static/css/main.7a688c65.css.map",
-    "main.0c8b0532.js.map": "/portfolioproject/static/js/main.0c8b0532.js.map"
+    "main.d38bcdea.js.map": "/portfolioproject/static/js/main.d38bcdea.js.map"
   },
   "entrypoints": [
     "static/css/main.7a688c65.css",
-    "static/js/main.0c8b0532.js"
+    "static/js/main.d38bcdea.js"
   ]
 }
