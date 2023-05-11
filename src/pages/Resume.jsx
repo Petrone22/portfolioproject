@@ -17,12 +17,15 @@ const Resume = () => {
           </p>
           <div className="email-span">
             <span>email: </span>
-            the1rashid@gmail.com
+            mustafa.rashid1546@gmail.com
           </div>
           <div className="email-span">
             <span>Website: </span>
-            <a href="https://petrone22.github.io/portfolioproject/#/">
-              Rashid.com
+            <a
+              href="https://petrone22.github.io/portfolioproject/#/"
+              className="my-website"
+            >
+              petrone22.github.io/portfolioproject
             </a>{" "}
           </div>
           <div className="resume-links">
@@ -117,8 +120,9 @@ const Resume = () => {
               <h3>Software Engineering</h3>
               <li>HTML5</li>
               <li>CSS3</li>
-              <li>ReactJS</li>
               <li>JavaScript</li>
+              <li>ReactJS</li>
+              <li>TailWind CSS</li>
               <li>Python</li>
             </div>
             <div className="skill">

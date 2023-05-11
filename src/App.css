@@ -718,3 +718,7 @@ textarea {
     align-items: center;
   }
 }
+.my-website {
+  text-decoration: none;
+  color: white;
+}
