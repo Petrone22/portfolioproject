@@ -22,5 +22,11 @@
     "description": "My portfolio, This website! :)",
     "linkgh": "https://github.com/Petrone22/portfolio",
     "linkwebsite": "https://petrone22.github.io/multi-step-form/"
+  },
+  {
+    "title": "Musika",
+    "description": "A personal music exploration application.",
+    "linkgh": "https://github.com/Petrone22/music-explorer",
+    "linkwebsite": "https://petrone22.github.io/music-explorer/"
   }
 ]

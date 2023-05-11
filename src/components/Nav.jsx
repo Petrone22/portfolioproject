@@ -6,37 +6,15 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
   const windowWidth = useRef(window.innerWidth);
   let location = useLocation();
 
-  // console.log(location.pathname);
-
   const changeClass = () => {
     if (navOpen) {
       setNavClass((prevClass) => "burgerBar");
       setNavOpen((prevNav) => !prevNav);
-      // setNavClass((prevClass) => "openedBurger");
-      // setNavOpen((prevNav) => !prevNav);
     } else if (!navOpen) {
-      // setNavClass((prevClass) => "burgerBar");
-      // setNavOpen((prevNav) => !prevNav);
       setNavOpen((prevNav) => !prevNav);
       setNavClass((prevClass) => "openedBurger");
     }
   };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", setNav);
-  // });
-
-  // const setNav = () => {
-  //   if (windowWidth.current >= 780) {
-  //     setNavOpen((prevNav) => true);
-  //   } else if (windowWidth.current < 780) {
-  //     if (navClass === "burgerBar") {
-  //       setNavOpen((prevNav) => false);
-  //     } else if (navClass === "openedBurger") {
-  //       setNavOpen((preVnav) => true);
-  //     }
-  //   }
-  // };
 
   return (
     <div className="nav">
@@ -62,19 +40,18 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
         <button
           className="nav-btn nav-button"
           onClick={() => {
-            handleScroll(refName2);
+            if (location.pathname === "/") {
+              handleScroll(refName2);
+            } else {
+              return;
+            }
           }}
         >
-          <a href="#" className="nav-link">
+          <Link to={"/"} className="nav-link">
             Projects
-          </a>
+          </Link>
         </button>
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            handleScroll(refName2);
-          }}
-        >
+        <button className="nav-btn nav-button">
           <Link to="/resume" className="nav-link">
             Resume
           </Link>
@@ -121,19 +98,18 @@ const Nav = ({ handleScroll, refName, refName2 }) => {
         <button
           className="nav-btn nav-button"
           onClick={() => {
-            handleScroll(refName2);
+            if (location.pathname === "/") {
+              handleScroll(refName2);
+            } else {
+              return;
+            }
           }}
         >
-          <a href="#" className="nav-link">
+          <Link to={"/"} className="nav-link">
             Projects
-          </a>
+          </Link>
         </button>
-        <button
-          className="nav-btn nav-button"
-          onClick={() => {
-            handleScroll(refName2);
-          }}
-        >
+        <button className="nav-btn nav-button">
           <Link to="/resume" className="nav-link">
             Resume
           </Link>

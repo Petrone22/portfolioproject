@@ -7,6 +7,7 @@ import enigma from "../assets/images/enigma.png";
 import portfolio from "../assets/images/portfolio.png";
 import Project from "../components/Project";
 import AboutMe from "../components/AboutMe";
+import musika from "../assets/images/musika.png";
 const Home = ({ refName, refName2 }) => {
   return (
     <div className="Home">
@@ -15,6 +16,13 @@ const Home = ({ refName, refName2 }) => {
         <AboutMe refName={refName} />
       </div>
       <div className="projects-section" ref={refName2}>
+        <Project
+          title={data[4].title}
+          description={data[4].description}
+          linkgh={data[4].linkgh}
+          linkPages={data[4].linkwebsite}
+          img={musika}
+        />
         <Project
           title={data[1].title}
           description={data[1].description}
@@ -29,13 +37,6 @@ const Home = ({ refName, refName2 }) => {
           linkPages={data[2].linkwebsite}
           img={form}
         />
-        <Project
-          title={data[3].title}
-          description={data[3].description}
-          linkgh={data[3].linkgh}
-          linkPages={data[3].linkwebsite}
-          img={portfolio}
-        />
 
         <Project
           title={data[0].title}
@@ -43,6 +44,13 @@ const Home = ({ refName, refName2 }) => {
           linkgh={data[0].linkgh}
           linkPages={data[0].linkwebsite}
           img={enigma}
+        />
+        <Project
+          title={data[3].title}
+          description={data[3].description}
+          linkgh={data[3].linkgh}
+          linkPages={data[3].linkwebsite}
+          img={portfolio}
         />
       </div>
     </div>

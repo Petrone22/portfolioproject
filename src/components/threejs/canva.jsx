@@ -6,8 +6,7 @@ import sculpture from "./bigsculpture.obj";
 import { useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import * as THREE from "three";
-import { Suspense } from "react";
-import CanvasLoader from "./CanvasLoader";
+// import CanvasLoader from "./CanvasLoader";
 export default function Canva() {
   const obj = useLoader(OBJLoader, sculpture);
 
@@ -16,7 +15,10 @@ export default function Canva() {
       shadows
       dpr={[1, 2]}
       camera={{ position: [-2, 5, 6], fov: 50, near: 1, far: 20 }}
-      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+      gl={{
+        preserveDrawingBuffer: true,
+        powerPreference: "high-performance",
+      }}
     >
       <color attach="background" args={["#202020"]} />
       <fog attach="fog" args={["#202020", 5, 20]} />
@@ -41,17 +43,16 @@ function Scene({ obj }) {
         color="#b00c3f"
         position={[3, 3, 0]}
       />
-      <Suspense fallback={<CanvasLoader />}>
-        <mesh
-          scale={0.02}
-          position={[1, -1.03, 0]}
-          castShadow
-          receiveShadow
-          geometry={obj}
-          material={new THREE.MeshPhongMaterial()}
-          dispose={null}
-        />
-      </Suspense>
+      <mesh
+        scale={0.02}
+        position={[1, -1.03, 0]}
+        castShadow
+        receiveShadow
+        geometry={obj}
+        material={new THREE.MeshPhongMaterial()}
+        dispose={null}
+      />
+
       <mesh receiveShadow position={[0, -1, 0]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[50, 50]} />
         <meshPhongMaterial color={"#c8e1ee"} />
